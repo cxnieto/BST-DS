@@ -1306,8 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c12c86e3267c545a42489db1f8a31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BSTManager
-  horizontalSpacing: 3.5
-  verticalSpacing: 2
+  horizontalSpacing: 100
+  verticalSpacing: 100
   rootPosition: {x: 1000, y: 1000, z: 0}
 --- !u!4 &632637822
 Transform:
@@ -1614,7 +1614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0fdc98b9bd2f74e802aaa5b3e32ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LineConnector
-  m_materialLinea: {fileID: 2100000, guid: 0c78b36aa24f336479d9cd720a16af89, type: 2}
+  m_lineaPrefab: {fileID: 1024942020234481027, guid: 96164a97b4a53d849a501fb328612315, type: 3}
+  canvasRef: {fileID: 1507639001}
+  m_grosor: 5
 --- !u!4 &1065363140
 Transform:
   m_ObjectHideFlags: 0
