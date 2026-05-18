@@ -3,7 +3,7 @@ using TMPro;
 
 public class NodeVisual : MonoBehaviour
 {
-    public TextMeshPro texto;
+    public TextMeshProUGUI texto;
 
     public void Inicializar(int valor, Vector3 posicion)
     {

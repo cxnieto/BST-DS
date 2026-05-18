@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.18}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: 0.004349, y: -0.11}
+  m_SizeDelta: {x: 4.333886, y: 2.946511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6408010295891644218
 MeshRenderer:
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -286,4 +286,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73ce22aa87f70d4d8f07a8648fd5ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeVisual
-  m_texto: {fileID: 5552142274648315108}
+  texto: {fileID: 5552142274648315108}
