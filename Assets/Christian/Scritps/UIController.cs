@@ -1,72 +1,84 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-
-// ----- UI CONTROLLER -----
 
 public class UIController : MonoBehaviour
 {
-    // ----- REFERENCIAS -----
+    public BSTManager m_arbol;
+    public LineConnector m_lineConnector;
 
-    //public BSTManager m_arbol;          
-    public LineConnector m_lineConnector;  
+    public GameObject m_nodoPrefab;
+    public TMP_InputField m_inputField;
+    public TextMeshProUGUI m_textoEstado;
 
-    public GameObject m_nodoPrefab;     
-    public TMP_InputField m_inputField;   
-    public TextMeshProUGUI m_textoEstado; 
-
-    // ----- BOTONES -----
-
-    public void OnBotonInsertar()
+    public void OnBotonAgregar()
     {
-        string sTexto = m_inputField.text; 
+        string sTexto = m_inputField.text;
 
-        if (sTexto == "") 
+        if (sTexto == "")
         {
             m_textoEstado.text = "Escriba un numero.";
             return;
         }
 
-        int iValor = int.Parse(sTexto); 
-
-        //Vector3 posicion = m_arbol.ObtenerPosicion(iValor); 
-
-        //bool bInsertado = m_arbol.Insertar(iValor, posicion); 
-
-        //if (bInsertado == false) 
+        int iValor;
+        if (!int.TryParse(sTexto, out iValor))
         {
-            m_textoEstado.text = "Error: valor repetido o arbol lleno.";
+            m_textoEstado.text = "Solo se permiten numeros enteros.";
             return;
         }
 
-        GameObject pNodoObj = Instantiate(m_nodoPrefab); 
+        bool bInsertado = m_arbol.Insertar(iValor, Vector3.zero);
 
-        NodeVisual pVisual = pNodoObj.GetComponent<NodeVisual>(); 
-        //pVisual.Inicializar(iValor, posicion);                    
-
-        //if (m_arbol.TienePadre(iValor)) 
+        if (bInsertado == false)
         {
-            //Vector3 posPadre = m_arbol.ObtenerPosicionPadre(iValor); 
-           // m_lineConnector.ConectarNodos(posPadre, posicion);        
+            m_textoEstado.text = "Error: valor repetido o arbol lleno.";
+            m_inputField.text = "";
+            return;
         }
 
-        m_textoEstado.text = "Nodo " + iValor + " insertado."; 
-        m_inputField.text = "";                                
+        RedibujarArbol();
+
+        m_textoEstado.text = "Nodo " + iValor + " insertado.";
+        m_inputField.text = "";
     }
 
     public void OnBotonLimpiar()
     {
-       // m_arbol.LimpiarArbol(); 
+        m_arbol.LimpiarArbol();
+        m_lineConnector.LimpiarLineas();
 
-        m_lineConnector.LimpiarLineas(); 
+        GameObject[] pNodos = GameObject.FindGameObjectsWithTag("Nodo");
 
-        GameObject[] pNodos = GameObject.FindGameObjectsWithTag("Nodo"); 
-
-        foreach (GameObject pNodo in pNodos) 
+        foreach (GameObject pNodo in pNodos)
         {
-            Destroy(pNodo); 
+            Destroy(pNodo);
         }
 
-        m_textoEstado.text = "Arbol limpiado."; 
+        m_textoEstado.text = "Arbol limpiado.";
+    }
+
+    private void RedibujarArbol()
+    {
+        GameObject[] pNodos = GameObject.FindGameObjectsWithTag("Nodo");
+        foreach (GameObject pNodo in pNodos)
+        {
+            Destroy(pNodo);
+        }
+
+        DibujarNodos(m_arbol);
+
+        m_lineConnector.RedibujarTodo(m_arbol.ObtenerConexiones());
+    }
+
+    private void DibujarNodos(BSTManager arbol)
+    {
+        foreach (int valor in arbol.ObtenerTodosLosValores())
+        {
+            Vector3 pos = arbol.ObtenerPosicion(valor);
+
+            GameObject pNodoObj = Instantiate(m_nodoPrefab);
+            NodeVisual pVisual = pNodoObj.GetComponent<NodeVisual>();
+            pVisual.Inicializar(valor, pos);
+        }
     }
 }

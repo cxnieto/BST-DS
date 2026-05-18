@@ -1,20 +1,16 @@
 using UnityEngine;
 using TMPro;
 
-
-
 public class NodeVisual : MonoBehaviour
 {
-    
-
-    public TextMeshPro m_texto;
-
-    
+    public TextMeshPro texto;
 
     public void Inicializar(int valor, Vector3 posicion)
     {
-        transform.position = posicion;  
+        gameObject.tag = "Nodo";
+        transform.position = posicion;
 
-        m_texto.text = valor.ToString(); 
+        if (texto != null)
+            texto.text = valor.ToString();
     }
 }
