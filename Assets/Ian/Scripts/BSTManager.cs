@@ -42,14 +42,14 @@ public class BSTManager : MonoBehaviour
         // Regla 1: Validar límite de 20 nodos
         if (totalNodes >= 20)
         {
-            Debug.LogError("Error: No se pueden agregar más de 20 nodos al árbol.");
+            Debug.Log("Error: No se pueden agregar más de 20 nodos al árbol.");
             return false;
         }
 
         // Regla 2: Validar si el valor ya existe (No repetidos)
         if (nodeLookup.ContainsKey(valor))
         {
-            Debug.LogError($"Error: El valor {valor} ya se encuentra repetido en el árbol.");
+            Debug.Log($"Error: El valor {valor} ya se encuentra repetido en el árbol.");
             return false;
         }
 
