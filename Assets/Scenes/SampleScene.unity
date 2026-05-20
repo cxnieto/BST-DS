@@ -253,7 +253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 303, y: 0}
+  m_AnchoredPosition: {x: 967, y: -513}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &274015038
@@ -601,7 +601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 201, y: -45}
+  m_AnchoredPosition: {x: 1720, y: -956}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364651775
@@ -1043,7 +1043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 35}
+  m_AnchoredPosition: {x: -763, y: 35}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &503518623
@@ -1306,8 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c12c86e3267c545a42489db1f8a31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BSTManager
-  horizontalSpacing: 100
-  verticalSpacing: 100
+  horizontalSpacing: 1000
+  verticalSpacing: 350
   rootPosition: {x: 1000, y: 1000, z: 0}
 --- !u!4 &632637822
 Transform:
@@ -1535,7 +1535,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003770838}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1544,7 +1544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003770840
@@ -1615,8 +1615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LineConnector
   m_lineaPrefab: {fileID: 1024942020234481027, guid: 96164a97b4a53d849a501fb328612315, type: 3}
-  canvasRef: {fileID: 1507639001}
-  m_grosor: 5
+  canvasRef: {fileID: 1003770839}
+  m_grosor: 10
 --- !u!4 &1065363140
 Transform:
   m_ObjectHideFlags: 0
@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIController
   m_arbol: {fileID: 632637821}
   m_lineConnector: {fileID: 1065363139}
-  canvasRef: {fileID: 1507639000}
+  canvasRef: {fileID: 1003770838}
   m_nodoPrefab: {fileID: 1589223417508613545, guid: ad7ae402823df83409a18d75af05f913, type: 3}
   m_inputField: {fileID: 364651777}
   m_textoEstado: {fileID: 70981527}
